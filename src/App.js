@@ -7,6 +7,8 @@ import { BsFillRecordFill } from 'react-icons/bs';  // Record button
 import { BsPauseFill } from 'react-icons/bs';        // Stop button
 import { BiReset } from 'react-icons/bi';           // Reset button
 
+import { getApiKey } from './config';
+
 // Add this function before your component or in a utils file
 const getPageColor = (pageNum) => {
   // Array of accessible, distinct colors
@@ -285,7 +287,7 @@ function App() {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+            'Authorization': `Bearer ${getApiKey()}`,
           },
         }
       );
